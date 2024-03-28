@@ -1,7 +1,30 @@
+:root {
+    --darkGreyBg: #010104;
+    --deepDarkBg: #2D2D2F;
+    --deepDarkPrimary: #03171A;
+    --deepDarkSecondary: #0EA0A1;
+    --deepDarkAccent: #586049;
+    --cavePrimary: #857a7a;
+    --caveSecondary: #ffffff;
+    --caveAccent: #4B2114;
+    --overworldPrimary: #854F2B;
+    --overworldSecondary: #477A1E;
+    --overworldAccent: #70B237;
+    --netherBg: #511515;
+    --netherPrimary: #723232;
+    --netherSecondary: #AC2020;
+    --netherAccent: #119B84;
+    --endBg: #141414;
+    --endPrimary: #9DCB74;
+    --endSecondary: #DE7AFA;
+    --endAccent: #5A186B;
+}
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    --rem: 16px;
 }
 
 html {
@@ -13,11 +36,72 @@ a {
     text-decoration: none;
 }
 
+body {
+    background-color: var(--darkGreyBg);
+    font-family: Poppins, sans-serif;
+}
+
 header {
+    width: 100%;
     display: flex;
     align-items: center;
+    padding: 3rem;
+    border-top: solid 5px var(--overworldSecondary);
+    border-bottom: solid 5px var(--cavePrimary);
+    background-color: var(--overworldPrimary);
+    font-family: Montserrat, sans-serif;
 }
 header h1 {
+    margin: auto;
+    color: white;
+}
+
+#menu {
+    height: 100vh;
+    width: 10%;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border: solid 5px #9c9696;
+    background-color: var(--cavePrimary);
+}
+#menu a{
+    margin: 0.5rem;
+    color: white;
+    transition: 0.2s;
+}
+#menu a:hover {
+    text-decoration-line: underline;
+    text-underline-offset: 2px;
+}
+
+.card {
+    width: 30%;
+    padding: 3%;
+    border-radius: 5px;
+    margin: auto;
+    background-color: var(--caveSecondary);
+}
+
+footer {
+    width: 100%;
     position: absolute;
-    left: 50%;
+    bottom: 0;
+    display: flex;
+    justify-content: space-around;
+    padding: 5rem;
+    margin-top: 5rem;
+    background-color: var(--cavePrimary);
+}
+footer ol {
+    display: flex;
+    flex-direction: column;
+}
+footer a {
+    margin: 3px 0;
+    color: black;
+}
+footer a:hover {
+    text-decoration-line: underline;
 }

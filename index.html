@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,12 +14,48 @@
 </head>
 <body>
     <header>
-        <div id="menu">
-            <img src="dropdown-menu-icon.png" alt="Dropdown Menu">
-        </div>
         <h1>Website Name</h1>
     </header>
 
+    <div id="menu">
+        <a href="#">Home</a>
+        <a href="#">Wiki</a>
+        <a href="#">Mindle</a>
+        <a href="#">Block Palettes</a>
+        <a href="#">Build Inspiration</a>
+        <a href="#">Share your Creations</a>
+    </div>
+
+    <div class="card">
+        <button id="signUp-btn"></button>
+
+        <div id="signUpcontainer">
+            <form name="signUp">
+                <label for="email-input-signup">Email: <input id="email-input-signup" type="email" required></label><br>
+                <label for="password-input-signup">Password: <input id="password-input-signup" type="password" required></label>
+            </form>
+        </div>
+    </div>
+
+
+    <footer>
+        <ol>
+            <a href="#">Home</a>
+            <a href="#">About Us</a>
+            <a href="#">Wiki</a>
+            <a href="#">Minedle</a>
+        </ol>
+        <ol>
+            <a href="#">Block Palettes</a>
+            <a href="#">Build Inspiration</a>
+            <a href="#">Share your builds</a>
+            <a href="#">Share your redstone creations</a>
+            <a href="#">Share your map art</a>
+        </ol>
+        <ol>
+            <a href="#">Account Settings</a>
+        </ol>
+    </footer>
     
     <script src="script.js"></script>
 </body>
