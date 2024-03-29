@@ -1,0 +1,260 @@
+:root {
+    --darkGreyBg: #010104;
+    --deepDarkBg: #2D2D2F;
+    --deepDarkPrimary: #03171A;
+    --deepDarkSecondary: #0EA0A1;
+    --deepDarkAccent: #586049;
+    --cavePrimary: #857a7a;
+    --caveSecondary: #ffffff;
+    --caveAccent: #4B2114;
+    --overworldPrimary: #854F2B;
+    --overworldSecondary: #477A1E;
+    --overworldAccent: #70B237;
+    --netherBg: #511515;
+    --netherPrimary: #723232;
+    --netherSecondary: #AC2020;
+    --netherAccent: #119B84;
+    --endBg: #141414;
+    --endPrimary: #9DCB74;
+    --endSecondary: #DE7AFA;
+    --endAccent: #5A186B;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    --rem: 16px;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1, h2, h3 {
+    font-family: Montserrat;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    background-color: var(--darkGreyBg);
+    font-family: Poppins, sans-serif;
+}
+
+@media (min-width: 1281px) and (max-width: 2560px) { 
+
+    header {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 3rem;
+        border-top: solid 5px var(--overworldSecondary);
+        border-bottom: solid 5px var(--cavePrimary);
+        background-color: var(--overworldPrimary);
+        font-family: Montserrat, sans-serif;
+    }
+    header h1 {
+        margin: auto;
+        color: white;
+    }
+
+    #side-block {
+        height: 100vh;
+        width: 10%;
+        position: absolute;
+        left: 0;
+        background-color: var(--cavePrimary);
+    }
+
+    #menu {
+        height: 55%;
+        width: 10%;
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        border: solid 5px #9c9696;
+        background-color: var(--cavePrimary);
+        z-index: 2;
+    }
+    #menu a{
+        margin: 0.5rem;
+        color: white;
+        transition: 0.2s;
+    }
+    #menu button {
+        margin: 0.5rem;
+        border: none;
+        background: none;
+        color: white;
+        font-family: Poppins, sans-serif;
+        font-size: 16px;
+        text-align: left;
+    }
+    #menu a:hover, #menu button:hover {
+        text-decoration-line: underline;
+        text-underline-offset: 2px;
+    }
+
+    .box {
+        height: 30rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+        margin: 2rem;
+        margin-left: 12%;
+        background-color: var(--cavePrimary);
+        color: var(--caveSecondary);
+    }
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        padding: 10px;
+        background-color: grey;
+    }
+
+    .container-left {
+        padding: 1rem;
+    }
+
+    .container-mid {
+        padding: 1rem;
+    }
+
+    .container-right {
+        padding: 1rem;
+    }
+
+    .card {
+        height: fit-content;
+        width: 35rem;;
+        position: fixed;
+        padding: 3%;
+        border-radius: 5px;
+        margin-top: -20%;
+        margin-left: 50%;
+        transform: translate(-50%,-50%);
+        background-color: var(--caveSecondary);
+        box-shadow: 0 0 10px 10px rgb(0, 0, 0, 0.45);
+        z-index: 3;
+        transition: all 1s linear;
+    }
+    .card h2 {
+        margin-bottom: 1.75rem;
+    }
+    .card p {
+        margin-top: 1rem;
+        text-align: center;
+    }
+
+    .close-card-btn {
+        height: 60px;
+        width: 60px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        border: none;
+        border-radius: 0 5px 0 0;
+        margin: -30px -30px 0 0;
+        background: none;
+        color: black;
+        font-size: 50px;
+    }
+    .close-card-btn:hover {
+        cursor: pointer;
+    }
+
+    .form-container {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 1rem;
+        background-color: #d2d2d2;
+    }
+
+    #email-input-login, #password-input-login, #email-input-signup, #password-input-signup{
+        width: 10rem;
+        padding: 2px;
+        border: none;
+        border-bottom: solid 1px;
+        margin: 0.5rem;
+        margin-bottom: 1rem;
+        background-color: #d2d2d2;
+        outline: none;
+    }
+
+    #rememberMe-check:hover {
+        cursor: pointer;
+    }
+
+    #forgot-password-btn {
+        border: none;
+        margin: 1rem;
+        background: none;
+        color: var(--deepDarkPrimary);
+        cursor: pointer;
+    }
+    #forgot-password-btn:hover {
+        text-decoration-line: underline;
+    }
+
+    #login-container p button, #signup-container p button{
+        color: var(--deepDarkPrimary);
+    }
+
+    #login-btn, #signup-btn {
+        height: 2rem;
+        width: 100%;
+        border: none;
+        border-radius: 7px;
+        background-color: var(--overworldSecondary);
+        color: white;
+        transition: 0.2s;
+    }
+    #login-btn:hover, #signup-btn:hover {
+        background-color: var(--overworldAccent);
+        cursor: pointer;
+    }
+
+    .switch-form-btn {
+        border: none;
+        background: none;
+        font-family: Poppins, sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    footer {
+        height: 30%;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 1rem;
+        margin-top: 10rem;
+        margin-bottom: -20vh;
+        background: linear-gradient(var(--cavePrimary), #363333);
+    }
+    footer ol {
+        display: flex;
+        flex-direction: column;
+    }
+    footer a {
+        margin: 3px 0;
+        color: black;
+    }
+    footer a:hover {
+        text-decoration-line: underline;
+    }
+}
+
+.hidden {
+    display: none;
+}
