@@ -1,0 +1,37 @@
+:root {
+    --darkGreyBg: #010104;
+    --deepDarkBg: #2D2D2F;
+    --deepDarkPrimary: #03171A;
+    --deepDarkSecondary: #0EA0A1;
+    --deepDarkAccent: #586049;
+    --cavePrimary: #857a7a;
+    --caveSecondary: #ffffff;
+    --caveAccent: #4B2114;
+    --overworldPrimary: #854F2B;
+    --overworldSecondary: #477A1E;
+    --overworldAccent: #70B237;
+    --netherBg: #511515;
+    --netherPrimary: #723232;
+    --netherSecondary: #AC2020;
+    --netherAccent: #119B84;
+    --endBg: #141414;
+    --endPrimary: #9DCB74;
+    --endSecondary: #DE7AFA;
+    --endAccent: #5A186B;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    --rem: 16px;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1, h2, h3 {
+    font-family: Montserrat;
+}
+

@@ -20,8 +20,8 @@
     <div id="side-block">
         <div id="menu">
             <a href="#">Home</a>
-            <a href="#">Wiki</a>
-            <a href="#">Mindle</a>
+            <a href="wiki.html">Wiki</a>
+            <a href="mindle.html">Mindle</a>
             <a href="#">Block Palettes</a>
             <a href="#">Build Inspiration</a>
             <a href="#">Share your Creations</a>
@@ -51,9 +51,9 @@
         <button class="close-card-btn">X</button>
         <div class="form-container" id="login-container">
             <h2>Sign In</h2>
-            <form id="login-form">
-                <label for="email-input-login">Email:<br><input id="email-input-login" type="email" required></label><br>
-                <label for="password-input-login">Password:<br><input id="password-input-login" type="password" required></label><br>
+            <form id="login-form" action="form-handler.php" method="post">
+                <label for="email-input-login">Email:<br><input id="email-input-login" type="email" name="email"></label><br>
+                <label for="password-input-login">Password:<br><input id="password-input-login" type="password" name="password" required></label><br>
                 <label for="rememberMe-check"><input id="rememberMe-check" type="checkbox"><span> Remember Me</span></label>
             </form>
             <button id="forgot-password-btn">Forgot your password?</button>
@@ -63,9 +63,9 @@
 
         <div class="hidden" id="signup-container">
             <h2>Sign Up</h2>
-            <form id="signup-form">
-                <label for="email-input-signup">Email:<br><input id="email-input-signup" type="email" required></label><br>
-                <label for="password-input-signup">Password:<br><input id="password-input-signup" type="password" required></label><br>
+            <form id="signup-form" action="form-handler.php" method="post">
+                <label for="email-input-signup">Email:<br><input id="email-input-signup" type="email" name="email" required></label><br>
+                <label for="password-input-signup">Password:<br><input id="password-input-signup" type="password" name="password" required></label><br>
             </form>
             <button id="signup-btn" type="submit" form="signup-form">Register</button>
             <p>Already have an account? <button class="switch-form-btn" id="switch-login-btn">Login</button></p>
@@ -76,8 +76,8 @@
         <ol>
             <a href="#">Home</a>
             <a href="#">About Us</a>
-            <a href="#">Wiki</a>
-            <a href="#">Minedle</a>
+            <a href="wiki.html">Wiki</a>
+            <a href="mindle.html">Minedle</a>
         </ol>
         <ol>
             <a href="#">Block Palettes</a>

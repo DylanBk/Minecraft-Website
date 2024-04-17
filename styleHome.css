@@ -36,13 +36,13 @@ h1, h2, h3 {
 }
 
 body {
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     background-color: var(--darkGreyBg);
     font-family: Poppins, sans-serif;
 }
 
-@media (min-width: 1281px) and (max-width: 2560px) { 
+/* @media (min-width: 1281px) and (max-width: 2560px) {  */
 
     header {
         width: 100%;
@@ -227,6 +227,103 @@ body {
         font-size: 16px;
         font-weight: bold;
         cursor: pointer;
+    }
+
+    .game-container {
+        display: flex;
+        height: 70vh;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+        margin: 2rem;
+        margin-left: 12%;
+        background-color: var(--cavePrimary);
+        color: var(--caveSecondary);
+    }
+
+    #game-error-msg {
+        color: var(--caveAccent); /*change to minecraft:sign*/
+        font-size: 1.25rem;
+    }
+
+    #game-win-msg {
+        color: var(--overworldAccent); /*change to minecraft:sign*/
+        font-size: 1.25rem;
+    }
+
+    #board {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        margin: 2em;
+        padding: 2em;
+        background-color: var(--caveAccent);
+    }
+    .square {
+        height: 2rem;
+        width: 2rem;
+        margin: 5px;
+        border: solid 1px var(--cavePrimary);
+        border-radius: 5px;
+        background-color: var(--caveAccent);
+        color: white;
+        font-size: 1.5rem;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    .square-correct {
+        height: 2rem;
+        width: 2rem;
+        margin: 5px;
+        border: solid 1px var(--cavePrimary);
+        border-radius: 5px;
+        background-color: var(--overworldSecondary);
+        color: white;
+        font-size: 1.5rem;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    .square-misplaced {
+        height: 2rem;
+        width: 2rem;
+        margin: 5px;
+        border: solid 1px var(--cavePrimary);
+        border-radius: 5px;
+        background-color: #d77700;
+        color: white;
+        font-size: 1.5rem;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    #keyboard-container {
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-80%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 5rem;
+        z-index: 10;
+    }
+
+    .keyboard-row {
+        height: 3rem;
+    }
+    .keyboard-row button {
+        padding: 0.5rem;
+        border: none;
+        border-radius: 5px;
+        background-color: var(--caveSecondary);
+        cursor: pointer;
+    }
+    .keyboard-row button:hover {
+        background-color: #ccc7c2;
+        transform: scale(1.05);
+    }
+
+    .wide-btn {
+        padding: 1rem;
     }
 
     footer {
