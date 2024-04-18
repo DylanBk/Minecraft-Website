@@ -125,25 +125,6 @@ function submitWord() {
                 for (let i = 0; i < word.length; i++) {
                     if (currentWord[i] === word[i]) {
                         let j = checkCurrentWordIndex(i)
-                        // switch (guessedWordsCount) {
-                        //     case 1:
-                        //         j = i + 5;
-                        //         break;
-                        //     case 2:
-                        //         j = i + 10;
-                        //         break;
-                        //     case 3:
-                        //         j = i + 15;
-                        //         break;
-                        //     case 4:
-                        //         j = i + 20;
-                        //     case 5:
-                        //         j = i + 25;
-                        //         break;
-                        //     default:
-                        //         j = i;
-                        //         break;
-                        // }
 
                         correctSquares = document.getElementById(String(j+1));
                         correctSquares.classList.add('square-correct');
