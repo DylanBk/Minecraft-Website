@@ -42,7 +42,7 @@ body {
     font-family: Poppins, sans-serif;
 }
 
-/* @media (min-width: 1281px) and (max-width: 2560px) {  */
+/* @media (min-width: 1281px) and (max-width: 2560px) {  */ /*for big screens*/
 
     header {
         width: 100%;
@@ -113,29 +113,27 @@ body {
         display: flex;
         flex-direction: row;
         padding: 10px;
-        background-color: grey;
     }
 
     .container-left {
+        width: 70%;
         padding: 1rem;
-    }
-
-    .container-mid {
-        padding: 1rem;
+        border-right: solid 1px var(--caveSecondary);
     }
 
     .container-right {
+        width: 30%;
         padding: 1rem;
     }
 
     .card {
+        position: absolute;
+        left: 50%;
+        top: 50%;
         height: fit-content;
-        width: 35rem;;
-        position: fixed;
+        width: 35rem;
         padding: 3%;
         border-radius: 5px;
-        margin-top: -20%;
-        margin-left: 50%;
         transform: translate(-50%,-50%);
         background-color: var(--caveSecondary);
         box-shadow: 0 0 10px 10px rgb(0, 0, 0, 0.45);
@@ -230,15 +228,19 @@ body {
     }
 
     .game-container {
-        display: flex;
+        position: absolute;
+        left: 50%;
+        top: 50%;
         height: 70vh;
+        width: 80%;
+        display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 1rem;
+        padding: 2rem;
         margin: 2rem;
-        margin-left: 12%;
         background-color: var(--cavePrimary);
         color: var(--caveSecondary);
+        transform: translate(-50%,-50%);
     }
 
     #game-error-msg {
@@ -294,16 +296,27 @@ body {
         text-align: center;
         text-transform: uppercase;
     }
+    .square-incorrect {
+        height: 2rem;
+        width: 2rem;
+        margin: 5px;
+        border: solid 1px var(--cavePrimary);
+        border-radius: 5px;
+        background-color: grey;
+        color: white;
+        font-size: 1.5rem;
+        text-align: center;
+        text-transform: uppercase;
+    }
 
     #keyboard-container {
         position: absolute;
         top: 80%;
         left: 50%;
-        transform: translateX(-50%) translateY(-80%);
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin: 5rem;
+        transform: translateX(-50%) translateY(-80%);
         z-index: 10;
     }
 
@@ -320,6 +333,10 @@ body {
     .keyboard-row button:hover {
         background-color: #ccc7c2;
         transform: scale(1.05);
+    }
+    .keyboard-btn-disabled {
+        background-color: #868686 !important;
+        pointer-events: none;
     }
 
     .wide-btn {
@@ -350,7 +367,7 @@ body {
     footer a:hover {
         text-decoration-line: underline;
     }
-}
+/* } */
 
 .hidden {
     display: none;

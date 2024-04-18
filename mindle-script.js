@@ -120,6 +120,9 @@ function submitWord() {
                     correctSquares.classList.add('square-correct');
                 }
                 winMessage.textContent = "Well done! You guessed correctly.";
+                // document.getElementById('keyboard-container').classList.add('hidden'); // doesnt work
+                // document.querySelectorAll('.keyboard-row').classList.add('hidden');
+                // document.querySelectorAll('.keyboard-row button').classList.add('hidden');
             }
             else {
                 for (let i = 0; i < word.length; i++) {
@@ -130,6 +133,13 @@ function submitWord() {
                         correctSquares.classList.add('square-correct');
                     }
                     else if (!word.includes(currentWord[i])) {
+                        let j = checkCurrentWordIndex(i)
+                        let letter = currentWord[i]
+                        let key = document.getElementById(String(letter))
+
+                        incorrectSquares = document.getElementById(String(j+1));
+                        incorrectSquares.classList.add('square-incorrect');
+                        key.classList.add('keyboard-btn-disabled');
                     }
                     else {
                         let j = checkCurrentWordIndex(i)
