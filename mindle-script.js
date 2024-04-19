@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 let guessedWords = [[]];
 let guessedWordsCount = 0;
 let guessed = false;
+let correct_words = []
 
 let availableSpace = 1;
 const keys = document.querySelectorAll(".keyboard-row button");
@@ -27,6 +28,8 @@ const winMessage = document.getElementById("game-win-msg");
 const interval = 200;
 
 const word = "ocean"; // temporary
+let wordList = Array.from(word)
+console.log(wordList);
 
 
 for (let i = 0; i < keys.length; i++) {
@@ -126,13 +129,18 @@ function submitWord() {
             }
             else {
                 for (let i = 0; i < word.length; i++) {
+                
                     if (currentWord[i] === word[i]) {
                         let j = checkCurrentWordIndex(i)
 
                         correctSquares = document.getElementById(String(j+1));
                         correctSquares.classList.add('square-correct');
+
+                        wordList.splice(i, 1);
+                        correct_words.push(currentWord[i])
+
                     }
-                    else if (!word.includes(currentWord[i])) {
+                    else if (!wordList.includes(currentWord[i]) || (correct_words.includes(currentWord[i])))  {
                         let j = checkCurrentWordIndex(i)
                         let letter = currentWord[i]
                         let key = document.getElementById(String(letter))
