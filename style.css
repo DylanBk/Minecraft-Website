@@ -369,6 +369,44 @@ body {
         padding: 1rem;
     }
 
+    #select-version-span {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    #wiki-items-container {
+        width: 80%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly; 
+        padding: 1rem;
+        margin-top: 1rem;
+        background: pink;
+    }
+
+    .wiki-item {
+        height: 2rem;
+        width: 2rem;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        border: solid 1px var(--caveSecondary);
+        margin: 1rem;
+        background: var(--cavePrimary);
+    }
+    .wiki-item-img {
+        height: 40px;
+        border: solid 1px var(--caveSecondary);
+    }
+    .wiki-item-name {
+        border-bottom: solid 1px var(--caveSecondary);
+        font-size: 22px;
+    }
+    .wiki-item-p {
+        font-size: 15px;
+    }
+
+
     footer {
         height: 25%;
         width: 100%;
