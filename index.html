@@ -50,9 +50,9 @@
         <button class="close-card-btn">X</button>
         <div class="form-container" id="login-container">
             <h2>Sign In</h2>
-            <form id="login-form" action="form-handler.php" method="post">
-                <label for="email-input-login">Email:<br><input id="email-input-login" type="email" name="email"></label><br>
-                <label for="password-input-login">Password:<br><input id="password-input-login" type="password" name="password" required></label><br>
+            <form id="login-form" onsubmit="return validateLoginForm()" method="post">
+                <label for="email-input-login">Email:<br><input id="email-input-login" type="email" name="email" autocomplete="email" required></label><br>
+                <label for="password-input-login">Password:<br><input id="password-input-login" type="password" name="password" autocomplete="current-password" required></label><br>
                 <label for="rememberMe-check"><input id="rememberMe-check" type="checkbox"><span> Remember Me</span></label>
             </form>
             <button id="forgot-password-btn">Forgot your password?</button>
@@ -62,7 +62,7 @@
 
         <div class="hidden" id="signup-container">
             <h2>Sign Up</h2>
-            <form id="signup-form" action="form-handler.php" method="post">
+            <form id="signup-form" method="post">
                 <label for="email-input-signup">Email:<br><input id="email-input-signup" type="email" name="email" required></label><br>
                 <label for="password-input-signup">Password:<br><input id="password-input-signup" type="password" name="password" required></label><br>
             </form>
@@ -91,5 +91,24 @@
     </footer>
     
     <script src="script.js"></script>
+    <script>
+        function validateLoginForm() {
+            let email = document.forms['login-form']['email-input-login'].value;
+            let pword = document.forms['login-form']['password-input-login'].value;
+            let remember_me = document.forms['login-form']['rememberMe-check'].checked;
+
+            const validateEmail = (email) => {
+                return String(email)
+                    .toLowerCase()
+                    .match(
+                    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                    );
+                };
+
+            if (remember_me === true) {
+                console.log("remmeber login details")
+            };
+        };
+    </script>
 </body>
 </html>
