@@ -107,9 +107,9 @@
             let login_error_msg = document.getElementById('login-error');
 
             login_error_msg.textContent = "";
-            validateEmail();
+            x = validateEmail();
 
-            if (valid_email_check) {
+            if (x) {
                 validatePassword()
             };
 
@@ -120,6 +120,7 @@
 
                 if(valid_email_check) {
                     console.log(`email is valid.`);
+                    return valid_email_check;
                 } 
                 else{
                     login_error_msg.textContent = "Please enter a valid email" 
@@ -142,9 +143,9 @@
                 }
             };
 
-            // if (remember_me === true) {
-            //     console.log("remember login details");
-            // };
+            if (remember_me === true) {
+                console.log("remember login details");
+            };
         };
     </script>
 </body>
