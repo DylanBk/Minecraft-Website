@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="style.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Crafter's Corner | Home</title>
+    <meta name="description" content="Wiki, block palettes, builds, map art, redstone creations, games. Share your creations and draw inspiration from others.">
 </head>
 <body>
     <header>
-        <img src="crafterscorner.png" alt="Crafter's Corner Title Image" height="80px">
+        <img src="crafterscorner.png" alt="Crafter's Corner Title Image" height="80px" alt="An image displaying a graphical version of &quot;Crafter's Corner&quot;.">
     </header>
 
-    <div id="side-block">
-        <div id="menu">
+    <div id="side-block" aria-label="A side bar that the side-menu navbar scrolls down.">
+        <div id="menu" role="navigation" aria-label="The side menu navbar.">
             <a href="#">Home</a>
             <a href="wiki.html">Wiki</a>
             <a href="mindle.html">Mindle</a>
@@ -30,14 +34,15 @@
         </div>
     </div>
 
-    <div class="box">
+    <div class="box" role="main">
         <h2>Welcome to Crafter's Corner!</h2>
-        <div class="container">
+        <div class="container" role="main">
             <div class="container-left">
                 <h3>What is Crafter's Corner?</h3>
                 <p>Crafter's Corner is a home for Minecraft players looking to bring their ideas to life. Here, you can find information on blocks, items, resources and more in our wiki. Need inspiration? Check out our sections on block palettes, builds, map art, and redstone. By signing up, you can also upload your creations for others to see. Want to test your Minecraft knowledge? Try our Mindle game.</p><br><hr><br>
                 <h3>Why did we make this website?</h3>
                 <p>Although this website is a college project, we wanted to create a website where Minecraft players can access information about the game, design their next build using block palettes, and view creations from other players. We wanted to create a community for people to learn about the game, design their next in-game project, draw inspiration from other players, and share creations.</p>
+                <!-- <button id="read-main-index" class="screen-reader-off">Press to hear about Crafter's Corner</button> -->
             </div>
             <div class="container-right">
                 <h3>right</h3>
@@ -47,27 +52,29 @@
     </div>
 
     <div class="card">
-        <button class="close-card-btn">X</button>
+        <button class="close-card-btn" aria-label="A button used to close the login/signup popup.">X</button>
         <div class="form-container" id="login-container">
             <h2>Sign In</h2>
-            <form id="login-form" onsubmit="return validateLoginForm()" method="post">
-                <label for="email-input-login">Email:<br><input id="email-input-login" type="email" name="email" autocomplete="email" required></label><br>
-                <label for="password-input-login">Password:<br><input id="password-input-login" type="password" name="password" autocomplete="current-password" required></label><br>
-                <label for="rememberMe-check"><input id="rememberMe-check" type="checkbox"><span> Remember Me</span></label>
+            <p id="login-error" class="error-msg"></p>
+            <form id="login-form" role="form" onsubmit="return validateLoginForm()" method="post">
+                <label for="email-input-login">Email:<br><input id="email-input-login" type="email" name="email" autocomplete="email" required aria-label="Email input field."></label><br>
+                <label for="password-input-login">Password:<br><input id="password-input-login" type="password" name="password" autocomplete="current-password" required aria-label="Password input field."></label><br>
+                <label for="rememberMe-check"><input id="rememberMe-check" type="checkbox" aria-label="Tick this box to turn on remember password."><span> Remember Me</span></label>
             </form>
             <button id="forgot-password-btn">Forgot your password?</button>
             <button id="login-btn" type="submit" form="login-form">Login</button>
-            <p>Don't have an account? <button class="switch-form-btn" id="switch-signup-btn">Register</button></p>
+            <p>Don't have an account? <button class="switch-form-btn" id="switch-signup-btn" aria-details="Press this to switch to the sign up form.">Register</button></p>
         </div>
 
         <div class="hidden" id="signup-container">
             <h2>Sign Up</h2>
-            <form id="signup-form" method="post">
-                <label for="email-input-signup">Email:<br><input id="email-input-signup" type="email" name="email" required></label><br>
-                <label for="password-input-signup">Password:<br><input id="password-input-signup" type="password" name="password" required></label><br>
+            <p id="signup-error"></p>
+            <form id="signup-form" role="form" method="post">
+                <label for="email-input-signup">Email:<br><input id="email-input-signup" type="email" name="email" autocomplete="email" required aria-label="Email input field"></label><br>
+                <label for="password-input-signup">Password:<br><input id="password-input-signup" type="password" name="password" required aria-label="Password creation input field"></label><br>
             </form>
             <button id="signup-btn" type="submit" form="signup-form">Register</button>
-            <p>Already have an account? <button class="switch-form-btn" id="switch-login-btn">Login</button></p>
+            <p>Already have an account? <button class="switch-form-btn" id="switch-login-btn" aria-details="Press this to switch to the login form.">Login</button></p>
         </div>
     </div>
 
@@ -89,25 +96,55 @@
             <a href="#">Account Settings</a>
         </ol>
     </footer>
-    
+
     <script src="script.js"></script>
+    <!-- <script src="speakClient.js"></script> script for screen reader -->
     <script>
         function validateLoginForm() {
             let email = document.forms['login-form']['email-input-login'].value;
             let pword = document.forms['login-form']['password-input-login'].value;
             let remember_me = document.forms['login-form']['rememberMe-check'].checked;
+            let login_error_msg = document.getElementById('login-error');
 
-            const validateEmail = (email) => {
-                return String(email)
-                    .toLowerCase()
-                    .match(
-                    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-                    );
-                };
+            login_error_msg.textContent = "";
+            validateEmail();
 
-            if (remember_me === true) {
-                console.log("remmeber login details")
+            if (valid_email_check) {
+                validatePassword()
             };
+
+            function validateEmail() {
+                var valid_email_check = email.match(
+                    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                );
+
+                if(valid_email_check) {
+                    console.log(`email is valid.`);
+                } 
+                else{
+                    login_error_msg.textContent = "Please enter a valid email" 
+                    console.log(`email is invalid`);
+                };
+                return false;
+            };
+        
+            function validatePassword() {
+                var valid_pword_check = pword.match(
+                    /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/
+                );
+
+                if (valid_pword_check) {
+                    console.log('password valid');
+                }
+                else {
+                    login_error_msg.textContent = "Err password";
+                    console.log('pword invalid')
+                }
+            };
+
+            // if (remember_me === true) {
+            //     console.log("remember login details");
+            // };
         };
     </script>
 </body>

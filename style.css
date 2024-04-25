@@ -148,18 +148,20 @@ body {
     }
 
     .card {
-        position: absolute;
-        left: 50%;
-        top: 50%;
         height: fit-content;
         width: 35rem;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 50%;
         padding: 3%;
         border-radius: 5px;
-        transform: translate(-50%,-50%);
+        margin: auto;
         background-color: var(--caveSecondary);
         box-shadow: 0 0 10px 10px rgb(0, 0, 0, 0.45);
-        z-index: 3;
         transition: all 1s linear;
+        transform: translateY(-50%);
+        z-index: 3;
     }
     .card h2 {
         margin-bottom: 1.75rem;
@@ -176,10 +178,10 @@ body {
         top: 0;
         right: 0;
         border: none;
-        border-radius: 0 5px 0 0;
+        border-radius: 20px;
         margin: -30px -30px 0 0;
-        background: none;
-        color: black;
+        background: rgb(45, 45, 47, 0.5);
+        color: white;
         font-size: 50px;
     }
     .close-card-btn:hover {
@@ -336,23 +338,29 @@ body {
 
     #keyboard-container {
         position: absolute;
-        top: 90%;
         left: 50%;
+        bottom: 0;
         display: flex;
+        flex-wrap: nowrap;
         flex-direction: column;
         align-items: center;
-        margin-top: 7rem;
+        margin-bottom: -2rem;
         transform: translateX(-50%) translateY(-80%);
         z-index: 10;
     }
 
     .keyboard-row {
         height: 3rem;
+        display: flex;
+        flex-wrap: nowrap;
     }
     .keyboard-row button {
+        height: fit-content;
+        width: fit-content;
         padding: 0.5rem;
         border: none;
         border-radius: 5px;
+        margin: 0 3px;
         background-color: var(--caveSecondary);
         cursor: pointer;
     }
@@ -429,6 +437,7 @@ body {
         color: black;
     }
     footer a:hover {
+        color: var(--overworldAccent);
         text-decoration-line: underline;
     }
 }
@@ -726,24 +735,26 @@ body {
     }
 
     #keyboard-container {
-        position: absolute;
-        top: 90%;
-        left: 50%;
         display: flex;
+        flex-wrap: nowrap;
         flex-direction: column;
         align-items: center;
-        margin-bottom: 2rem;
-        transform: translateX(-50%) translateY(-80%);
+        margin: auto;
         z-index: 10;
     }
-
     .keyboard-row {
         height: 3rem;
+        display: flex;
+        flex-wrap: nowrap;
+        margin: 0 3px;
     }
     .keyboard-row button {
-        padding: 0.75rem;
+        height: fit-content;
+        width: fit-content;
+        padding: 0.5rem;
         border: none;
         border-radius: 5px;
+        margin: 0 3px 0 3px;
         background-color: var(--caveSecondary);
         cursor: pointer;
     }
@@ -856,6 +867,10 @@ body {
 
 
 /* HIDDEN ELEMENTS */
+
+.error-msg {
+    color: red;
+}
 
 .hidden {
     display: none;
