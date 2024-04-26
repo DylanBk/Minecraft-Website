@@ -26,19 +26,19 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 });
 
-// document.addEventListener('DOMContentLoaded', () => {
-//     fillVersionMenu();
+document.addEventListener('DOMContentLoaded', () => {
+    fillVersionMenu();
 
-//     function fillVersionMenu() {
-//         const menu = document.getElementById('minecraft-version-menu');
-//         const versionsArr = minecraftData.versionsByMinecraftVersion;
+    function fillVersionMenu() {
+        const menu = document.getElementById('minecraft-version-menu');
+        const versionsArr = minecraftData.versionsByMinecraftVersion;
 
-//         for (let i = 0; i < 30; i++) {
-//             let menu_item = document.createElement('option');
-//             menu_item.setAttribute('id', i + 1);
-//             menu_item.textContent = i;
-//             menu.appendChild(menu_item);
+        for (let i = 0; i < 30; i++) {
+            let menu_item = document.createElement('option');
+            menu_item.setAttribute('id', i + 1);
+            menu_item.textContent = i;
+            menu.appendChild(menu_item);
 
-//         };
-//     };
-// });
+        };
+    };
+});
