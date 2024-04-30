@@ -45,9 +45,8 @@
                 <!-- <button id="read-main-index" class="screen-reader-off">Press to hear about Crafter's Corner</button> -->
             </div>
             <div class="container-right">
-                <h3>Build of the Week</h3>
-                <img src="temp.svg" height="200px" alt="An image of the build of the week.">
-                <p>{build name} by {username}</p>
+                <h3>right</h3>
+                <p>image</p>
             </div>
         </div>
     </div>
@@ -94,7 +93,7 @@
             <a href="#">Share your map art</a>
         </ol>
         <ol>
-            <a href="#">Account Settings</a>
+            <a href="settings.html">Account Settings</a>
         </ol>
     </footer>
 
@@ -108,9 +107,9 @@
             let login_error_msg = document.getElementById('login-error');
 
             login_error_msg.textContent = "";
-            x = validateEmail();
+            validateEmail();
 
-            if (x) {
+            if (valid_email_check) {
                 validatePassword()
             };
 
@@ -121,7 +120,6 @@
 
                 if(valid_email_check) {
                     console.log(`email is valid.`);
-                    return valid_email_check;
                 } 
                 else{
                     login_error_msg.textContent = "Please enter a valid email" 
@@ -145,7 +143,7 @@
             };
 
             if (remember_me === true) {
-                console.log("remember login details");
+                console.log("remember login details"); // cookies or something
             };
         };
     </script>

@@ -24,7 +24,6 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    --rem: 16px;
 }
 
 a {
@@ -33,6 +32,10 @@ a {
 
 h1, h2, h3 {
     font-family: Montserrat;
+}
+
+hr {
+    width: 100%;
 }
 
 body {
@@ -102,6 +105,7 @@ body {
     }
 
     .box {
+        position: relative;
         height: 30rem;
         display: flex;
         flex-direction: column;
@@ -127,10 +131,70 @@ body {
 
     .container-right {
         width: 30%;
+        padding: 1rem;
+    }
+
+    #settings-sidebar {
+        height: calc(100% - 7rem);
+        min-width: calc(15% - 3rem);
+        position: absolute;
+        left: 0;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+        padding: 2rem 0;
+        border-top: solid 1px white;
+        border-right: solid 1px white;
+        border-bottom: solid 1px white;
+        border-radius: 0 10px 10px 0;
+        margin: 3rem 3rem 0 3rem;
+    }
+    #settings-sidebar button {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        border: none;
+        background: none;
+        color: white;
+        cursor: pointer;
+        font-size: 1rem;
+    }
+    #settings-sidebar img {
+        height: 20px;
+    }
+
+    #settings-info-container {
+        width: 70%;
         display: flex;
         flex-direction: column;
+        gap: 1rem;
         align-items: center;
+        margin: 0 auto;
+    }
+
+    #settings-container {
+        min-width: 50%;
         padding: 1rem;
+        border: solid 1px white;
+        border-radius: 20px;
+        margin: 3rem auto;
+    }
+
+    .settings-option-row {
+        display: flex;
+        flex-direction: row;
+        margin: 1rem;
+    }
+    .settings-option-row button {
+        padding: 0.25rem;
+        border: solid 1px white;
+        border-radius: 5px;
+        margin-left: 0.75rem;
+    }
+    .settings-option-row button:hover {
+        border: solid 1px black;
     }
 
     .github-btn {
@@ -742,7 +806,7 @@ body {
         flex-wrap: nowrap;
         flex-direction: column;
         align-items: center;
-        margin: 2rem auto;
+        margin: auto;
         z-index: 10;
     }
     .keyboard-row {
@@ -866,6 +930,44 @@ body {
 }
 .footer-deep-dark a {
     color: var(--deepDarkSecondary);
+}
+
+
+/* END THEME */
+
+.body-end {
+    background: var(--endAccent);
+}
+
+.header-end {
+    border: none;
+    background: var(--endBg);
+}
+
+.side-block-end {
+    background: var(--endBg) !important;
+}
+
+.menu-end {
+    border: solid 5px var(--endSecondary) !important;
+    background: var(--endBg) !important;
+}
+.menu-end a{
+    color: #cecece !important;
+}
+
+.box-end {
+    background: var(--endBg);
+}
+
+.footer-end {
+    background: var(--endPrimary)/*linear-gradient(var(--endPrimary), var(--endBg))*/;
+}
+.footer-end a {
+    color: var(--endBg);
+}
+.footer-end a:hover {
+    color: var(--endAccent);
 }
 
 
