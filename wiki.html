@@ -34,24 +34,18 @@
         </div>
     </div>
 
-    <div class="box">
+    <div id="wiki-wrapper">
         <button id="switch-bedrock-java">Switch to Bedrock</button><br>
-       <span id="select-version-span"><p>Select Version</p>
+        <span id="select-version-span"><p>Select Version</p>
         <select name="minecraft-version-menu" id="minecraft-version-menu">
         </select></span>
-        <div id="wiki-items-container">
-            <!-- <div class="wiki-item">
-                <img class="wiki-item-img" src="#" alt="#">
-                <p class="wiki-item-name">Name</p>
-                <p class="wiki-item-p">Data</p> -->
-            </div>
-        </div>
+        <div id="wiki-items-container"></div>
     </div>
 
-    <footer>
+    <footer class="footer-wiki">
         <ol>
             <a href="index.html">Home</a>
-            <a href="#">About Us</a>
+            <a href="about-us.html">About Us</a>
             <a href="#">Wiki</a>
             <a href="mindle.html">Minedle</a>
         </ol>
@@ -63,11 +57,14 @@
             <a href="#">Share your map art</a>
         </ol>
         <ol>
-            <a href="about-us.html">Account Settings</a>
+            <a href="settings.html">Account Settings</a>
+        </ol>
+        <ol id="credit-ol">
+            <h4>Credit:</h4>
+            <p id="credit-p">This website uses data from the<a href="https://github.com/PrismarineJS/minecraft-data?tab=readme-ov-file#license"> minecraft-data</a> repository on Github. Some of their data was extracted from <a href="https://minecraft.fandom.com/">here</a> and also <a href="https://wiki.vg/Mojang_API">here</a>.</p>
         </ol>
     </footer>
     
-    <script src="bundle.js"></script>
-    <script src="wiki-script.cjs"></script>
 </body>
+<script src="wiki-script.js"></script>
 </html>

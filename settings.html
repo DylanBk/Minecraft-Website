@@ -20,12 +20,12 @@
 <body class="body-end">
 
     <header class="header-end">
-        <img src="crafterscorner.png" alt="Crafter's Corner Title Image" height="80px" alt="An image displaying a graphical version of &quot;Crafter's Corner&quot;.">
+        <img src="/images/crafterscorner.png" alt="Crafter's Corner Title Image" height="80px" alt="An image displaying a graphical version of &quot;Crafter's Corner&quot;.">
     </header>
 
     <div id="side-block" class="side-block-end" aria-label="A side bar that the side-menu navbar scrolls down.">
         <div id="menu" class="menu-end" role="navigation" aria-label="The side menu navbar.">
-            <a href="#">Home</a>
+            <a href="index.html">Home</a>
             <a href="wiki.html">Wiki</a>
             <a href="mindle.html">Mindle</a>
             <a href="#">Block Palettes</a>
@@ -50,7 +50,15 @@
             <div id="settings-container">
                 <div class="settings-option-row"><p>Email: <span id="email-display-settings"></span></p><button>Change Email</button></div>
                 <div class="settings-option-row"><p>Username: <span id="username-display-settings"></span></p><button>Change Username</button></div>
-                <div class="settings-option-row"><p>Password: <span id="pword-display-settings">HIDDEN</span></p><button>View Password</button><button>Change Password</button></div>  <!-- view password => symbol-->
+                <div class="settings-option-row"><p>Password: <span id="pword-display-settings">********</span></p><button>View Password</button><button>Change Password</button></div>  <!-- view password => symbol-->
+                <div class="settings-option-row"><button id="delete-account-btn">Delete Account</button></div>
+                <div id="delete-account-check-card" class="hidden">
+                    <p>Warning: Are you sure you wish to delete your account?</p>
+                    <div id="yes-no-btns">
+                        <button id="delete-yes-btn">Yes</button>
+                        <button id="delete-no-btn">Cancel</button>
+                    </div>
+                </div>
             </div>
                 <!-- <form name="change-email-form">
                     <label id="email-label-settings" for="email-input-settings"><input id="email-input-settings" type="email"></label>
@@ -78,3 +86,6 @@
     </footer>
 
 </body>
+
+<script src="script.js"></script>
+</html>

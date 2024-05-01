@@ -20,6 +20,11 @@
     --endAccent: #5A186B;
 }
 
+html {
+    height: 100%;
+    width: 100%;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -27,6 +32,7 @@
 }
 
 a {
+    font-size: 14px;
     text-decoration: none;
 }
 
@@ -36,6 +42,10 @@ h1, h2, h3 {
 
 hr {
     width: 100%;
+}
+
+p {
+    font-size: 14px;
 }
 
 body {
@@ -54,7 +64,8 @@ body {
 @media (min-width: 1281px) and (max-width: 2560px) {
 
     header {
-        height: 20%;
+        position: relative;
+        height: 10rem;
         width: 100%;
         display: flex;
         justify-content: center;
@@ -64,13 +75,16 @@ body {
         border-bottom: solid 5px var(--cavePrimary);
         background-color: var(--overworldPrimary);
         font-family: Montserrat, sans-serif;
+        z-index: 3;
     }
 
     #side-block {
-        height: 100vh;
+        height: 100%;
         width: 10%;
-        position: absolute;
+        position: fixed;
         left: 0;
+        bottom: 0;
+        margin: auto;
         background-color: var(--cavePrimary);
     }
 
@@ -82,8 +96,9 @@ body {
         flex-direction: column;
         padding: 1rem;
         border: solid 5px #9c9696;
+        margin: 10rem auto;
         background-color: var(--cavePrimary);
-        z-index: 2;
+        z-index: 3;
     }
     #menu a{
         margin: 0.5rem;
@@ -192,9 +207,61 @@ body {
         border: solid 1px white;
         border-radius: 5px;
         margin-left: 0.75rem;
+        cursor: pointer;
     }
     .settings-option-row button:hover {
         border: solid 1px black;
+    }
+
+    #delete-account-btn {
+        padding: 0;
+        border: none;
+        margin: 0;
+        background: none;
+        color: red;
+        font-size: 1rem;
+    }
+    #delete-account-btn:hover {
+        color: #c40000;
+    }
+
+    #delete-account-check-card {
+        height: 7rem;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding: 5px;
+        border: solid 1px white;
+        border-radius: 10px;
+        margin: 0 auto;
+        background: var(--cavePrimary);
+        font-size: 1rem;
+    }
+
+    #yes-no-btns {
+        display: flex;
+        flex-direction: row;
+    }
+    #yes-no-btns button {
+        width: 49%;
+        border: solid 1px white;
+        border-radius: 5px;
+        margin: 0 auto;
+        color: white;
+        cursor: pointer;
+    }
+    #delete-yes-btn {
+        background: red;
+    }
+    #delete-yes-btn:hover {
+        background: #c40000;
+    }
+    #delete-no-btn {
+        background: grey;
+    }
+    #delete-no-btn:hover {
+        background: #737373;
     }
 
     .github-btn {
@@ -449,38 +516,51 @@ body {
         flex-wrap: nowrap;
     }
 
-    #wiki-items-container {
-        width: 80%;
+    #wiki-wrapper {
+        height: fit-content;
+        /* width: min-content; */
+        position: relative;
         display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly; 
+        flex-direction: column;
+        align-items: center;
         padding: 1rem;
-        margin-top: 1rem;
-        background: pink;
+        margin: 2rem;
+        margin-left: 12%;
+        background-color: var(--cavePrimary);
+        color: var(--caveSecondary);
+    }
+
+    #wiki-items-container {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        justify-items: center;
+        padding: 1rem;
+        margin: 1rem auto 0 auto;
     }
 
     .wiki-item {
-        height: 2rem;
-        width: 2rem;
+        height: fit-content;
+        width: fit-content;
         display: flex;
         flex-direction: column;
         padding: 1rem;
         border: solid 1px var(--caveSecondary);
-        margin: 1rem;
+        margin: 1rem auto;
         background: var(--cavePrimary);
     }
     .wiki-item-img {
         height: 40px;
         border: solid 1px var(--caveSecondary);
     }
-    .wiki-item-name {
-        border-bottom: solid 1px var(--caveSecondary);
-        font-size: 22px;
-    }
-    .wiki-item-p {
+    .wiki-item-title {
         font-size: 15px;
+        border-bottom: solid 1px white;
     }
-
+    .wiki-item-data {
+        display: flex;
+        flex-direction: column;
+    }
 
     footer {
         height: 25%;
@@ -507,6 +587,13 @@ body {
         color: var(--overworldAccent);
         text-decoration-line: underline;
     }
+
+    #credit-ol {
+        width: 30%;
+    }
+    #credit-p a {
+        text-decoration-line: underline;
+    }
 }
 
 
@@ -517,6 +604,7 @@ body {
 
 @media (min-width: 1025px) and (max-width: 1280px) {
     header {
+        position: relative;
         height: 8rem;
         width: 100%;
         display: flex;
@@ -527,13 +615,16 @@ body {
         border-bottom: solid 5px var(--cavePrimary);
         background-color: var(--overworldPrimary);
         font-family: Montserrat, sans-serif;
+        z-index: 3;
     }
 
     #side-block {
-        height: 100vh;
+        height: 100%;
         width: 15%;
-        position: absolute;
+        position: fixed;
         left: 0;
+        bottom: 0;
+        margin: auto;
         background-color: var(--cavePrimary);
     }
 
@@ -544,9 +635,10 @@ body {
         display: flex;
         flex-direction: column;
         padding: 1rem;
+        margin: 10rem auto;
         border: solid 5px #9c9696;
         background-color: var(--cavePrimary);
-        z-index: 2;
+        z-index: 3;
     }
     #menu a{
         margin: 0.5rem;
@@ -970,6 +1062,20 @@ body {
     color: var(--endAccent);
 }
 
+.footer-wiki {
+    height: 8rem !important;
+    width: 100% !important;
+    position: fixed !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-around !important;
+    padding: 1rem !important;
+    margin: auto;
+    background: linear-gradient(var(--cavePrimary), #363333) !important;
+}
+.footer-wiki ol a {
+    margin: 0;
+}
 
 /* HIDDEN ELEMENTS */
 
@@ -978,5 +1084,5 @@ body {
 }
 
 .hidden {
-    display: none;
+    display: none !important;
 }
