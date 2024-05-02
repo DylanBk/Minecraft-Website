@@ -530,6 +530,18 @@ body {
         color: var(--caveSecondary);
     }
 
+    #switch-bedrock-java {
+        padding: 1rem;
+        border: none;
+        border-radius: 1rem;
+        margin: 1rem auto;
+    }
+    #switch-bedrock-java:hover {
+        padding: calc(1rem - 1px);
+        border: solid 1px black;
+        background: var(--overworldAccent);
+    }
+
     #wiki-items-container {
         width: 100%;
         display: grid;
