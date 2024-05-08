@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Crafter's Corner | Account Settings</title>
+    <meta name="description" content="Change your username, email, password, or delete your account.">
+</head>
+
+<body class="body-end">
+
+    <header class="header-end">
+        <img src="{{ url_for('static', filename='/images/crafterscorner.png')}}" alt="Crafter's Corner Title Image" height="80px" alt="An image displaying a graphical version of &quot;Crafter's Corner&quot;.">
+    </header>
+
+    <div id="side-block" class="side-block-end" aria-label="A side bar that the side-menu navbar scrolls down.">
+        <div id="menu" class="menu-end" role="navigation" aria-label="The side menu navbar.">
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('wiki') }}">Wiki</a>
+            <a href="{{ url_for('mindle') }}">Mindle</a>
+            <a href="#">Block Palettes</a>
+            <a href="#">Build Inspiration</a>
+            <a href="#">Share your Creations</a>
+            <a href="{{ url_for('index') }}">Login</a>
+            <a href="{{ url_for('about_us') }}">About Us</a>
+        </div>
+    </div>
+
+    <main>
+        <div class="box box-end">
+            <aside id="settings-sidebar">
+                <button><img src="{{ url_for('static', filename='/images/account.png')}}" alt="Account icon">Account</button> <!-- ADD ACCOUNT SYMBOL -->
+                <button><img src="{{ url_for('static', filename='/images/help.png')}}" alt="Help icon">Help</button> <!-- ADD ? SYMBOL -->
+            </aside>
+            <div id="settings-info-container">
+                <h2>Account Settings</h2>
+                <hr>
+                <p>Welcome to the settings page, here you can change your email, username, and password or delete your account.</p>
+            </div>
+            <div id="settings-container">
+                <div class="settings-option-row"><p>Email: <span id="email-display-settings"></span></p><button>Change Email</button></div>
+                <div class="settings-option-row"><p>Username: <span id="username-display-settings"></span></p><button>Change Username</button></div>
+                <div class="settings-option-row"><p>Password: <span id="pword-display-settings">********</span></p><button>View Password</button><button>Change Password</button></div>  <!-- view password => symbol-->
+                <div class="settings-option-row"><button id="delete-account-btn">Delete Account</button></div>
+                <div id="delete-account-check-card" class="hidden">
+                    <p>Warning: Are you sure you wish to delete your account?</p>
+                    <div id="yes-no-btns">
+                        <button id="delete-yes-btn">Yes</button>
+                        <button id="delete-no-btn">Cancel</button>
+                    </div>
+                </div>
+            </div>
+                <!-- <form name="change-email-form">
+                    <label id="email-label-settings" for="email-input-settings"><input id="email-input-settings" type="email"></label>
+                </form> -->
+        </div>
+    </main>
+
+    <footer class="footer-end">
+        <ol>
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('about_us') }}">About Us</a>
+            <a href="{{ url_for('wiki') }}">Wiki</a>
+            <a href="{{ url_for('mindle') }}">Minedle</a>
+        </ol>
+        <ol>
+            <a href="#">Block Palettes</a>
+            <a href="#">Build Inspiration</a>
+            <a href="#">Share your builds</a>
+            <a href="#">Share your redstone creations</a>
+            <a href="#">Share your map art</a>
+        </ol>
+        <ol>
+            <a href="#">Account Settings</a>
+        </ol>
+    </footer>
+
+</body>
+
+<script src="{{ url_for('static', filename='/js/script.js') }}"></script>
+</html>

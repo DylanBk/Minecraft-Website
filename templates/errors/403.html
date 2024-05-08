@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Crafter's Corner | Home</title>
+    <meta name="description" content="Wiki, block palettes, builds, map art, redstone creations, games. Share your creations and draw inspiration from others.">
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='/images/crafterscorner.png')}}" alt="Crafter's Corner Title Image" height="80px" alt="An image displaying a graphical version of &quot;Crafter's Corner&quot;.">
+    </header>
+
+    <div id="side-block" aria-label="A side bar that the side-menu navbar scrolls down.">
+        <div id="menu" role="navigation" aria-label="The side menu navbar.">
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('wiki') }}">Wiki</a>
+            <a href="{{ url_for('mindle') }}">Mindle</a>
+            <a href="#">Block Palettes</a>
+            <a href="#">Build Inspiration</a>
+            <a href="#">Share your Creations</a>
+            <button id="open-login-btn">Login</button>
+            <a href="{{ url_for('about_us') }}">About Us</a>
+        </div>
+    </div>
+
+    <div class="box">
+        <div id="err-card">
+            <h1>You do not have access to view this content.</h1>
+            <p>Please contact us if you believe this to be a mistake.</p>
+        </div>
+    </div>
+
+    <footer>
+        <ol>
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('about_us') }}">About Us</a>
+            <a href="{{ url_for('wiki') }}">Wiki</a>
+            <a href="{{ url_for('mindle') }}">Minedle</a>
+        </ol>
+        <ol>
+            <a href="#">Block Palettes</a>
+            <a href="#">Build Inspiration</a>
+            <a href="#">Share your builds</a>
+            <a href="#">Share your redstone creations</a>
+            <a href="#">Share your map art</a>
+        </ol>
+        <ol>
+            <a href="{{ url_for('settings') }}">Account Settings</a>
+        </ol>
+    </footer>
+
+    <script src="{{ url_for('static', filename='/js/script.js') }}"></script>
+
+</body>
+</html>
