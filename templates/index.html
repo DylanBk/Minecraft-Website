@@ -56,7 +56,7 @@
         <div class="form-container" id="login-container">
             <h2>Sign In</h2>
             <p id="login-error" class="error-msg"></p>
-            <form id="login-form" role="form" onsubmit="return validateLoginForm()" method="post">
+            <form id="login-form" role="form" onsubmit="return validateLoginForm()" action="{{ url_for('login') }}" method="post">
                 <label for="email-input-login">Email:<br><input id="email-input-login" type="email" name="email" autocomplete="email" required aria-label="Email input field."></label><br>
                 <label for="password-input-login">Password:<br><input id="password-input-login" type="password" name="password" autocomplete="current-password" required aria-label="Password input field."></label><br>
                 <label for="rememberMe-check"><input id="rememberMe-check" type="checkbox" aria-label="Tick this box to turn on remember password."><span> Remember Me</span></label>
@@ -69,8 +69,9 @@
         <div class="hidden" id="signup-container">
             <h2>Sign Up</h2>
             <p id="signup-error"></p>
-            <form id="signup-form" role="form" method="post">
+            <form id="signup-form" role="form" onsubmit="return validateLoginForm()" action="{{ url_for('signup') }}" method="post">
                 <label for="email-input-signup">Email:<br><input id="email-input-signup" type="email" name="email" autocomplete="email" required aria-label="Email input field"></label><br>
+                <label for="username-input-signup">Username:<br><input id="username-input-signup" type="text" name="username" required aria-label="Username creation input field"></label><br>
                 <label for="password-input-signup">Password:<br><input id="password-input-signup" type="password" name="password" required aria-label="Password creation input field"></label><br>
             </form>
             <button id="signup-btn" type="submit" form="signup-form">Register</button>
@@ -98,6 +99,7 @@
     </footer>
 
     <script src="{{ url_for('static', filename='/js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='/js/login-script.js') }}"></script>
     <!-- <script src="speakClient.js"></script> script for screen reader -->
     <script>
         function validateLoginForm() {
