@@ -51,7 +51,7 @@
                 <div class="settings-option-row"><p>Email: <span id="email-display-settings"></span></p><button>Change Email</button></div>
                 <div class="settings-option-row"><p>Username: <span id="username-display-settings"></span></p><button>Change Username</button></div>
                 <div class="settings-option-row"><p>Password: <span id="pword-display-settings">********</span></p><button>View Password</button><button>Change Password</button></div>  <!-- view password => symbol-->
-                <div class="settings-option-row"><button id="delete-account-btn">Delete Account</button></div>
+                <div class="settings-option-row"><a id="delete-account-btn" href="{{ url_for('delete_account') }}">Delete Account</a></div>
                 <div id="delete-account-check-card" class="hidden">
                     <p>Warning: Are you sure you wish to delete your account?</p>
                     <div id="yes-no-btns">
@@ -87,5 +87,5 @@
 
 </body>
 
-<script src="{{ url_for('static', filename='/js/script.js') }}"></script>
+<script src="{{ url_for('static', filename='/js/settings-script.js') }}"></script>
 </html>
