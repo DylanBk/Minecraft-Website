@@ -162,7 +162,6 @@ def upload_block_palette():
         cur.execute("BEGIN TRANSACTION;")
         print("begun transaction")
         try:
-
             name = request.form["block-palette-name"]
 
             if 'block-palette-img' in request.files:
@@ -197,7 +196,6 @@ def delete_account():
     email = "test@domain.com" # !! GET USER DATA SOMEHOW !!
     username = "aa"
     password = "password123"
-    print("checkpoint 1")
 
     remove_data(email, username, password)
 
