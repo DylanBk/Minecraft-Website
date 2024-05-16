@@ -44,7 +44,8 @@
         </form>
 
         <div id="block-palettes-container" class="box">
-            {{ palettes }}
+            <img src="data:image/png;base64,{{ png_decoded }}">
+            <!-- {{ palettes }} -->
             <!-- {% set counter = 0 %}
             {% for palette in palettes %}
                 {% set counter = counter + 1 %}

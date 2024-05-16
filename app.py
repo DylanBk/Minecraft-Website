@@ -130,26 +130,19 @@ def block_palettes():
     con = sqlite3.connect('data/block-palettes.db')
     cur = con.cursor()
 
-    # binary_image = cur.execute("SELECT image FROM palettes;").fetchone()[0]
-    # base64img = base64.b64encode(binary_image).decode('utf-8')
-    # data_url = f'data:image/png;base64,{base64img}'
+    # !! CONVERT IMAGE BINARY DATA TO IMAGE !!
+    with open("static/images/account.png", "rb") as f:
+        png_encoded = base64.b64encode(f.read())
+    # print(png_encoded)
+    encoded_b2 = "".join([format(n, '08b') for n in png_encoded])
 
-    # image = f'<img src="{data_url}" alt="Image">'
+    print(encoded_b2)
 
-    binary_image = cur.execute("SELECT image FROM palettes;").fetchone()[0]
-
-    # Encoding the binary image data to base64
-    base64img = base64.b64encode(binary_image).decode('utf-8')
-
-    # Constructing the data URL
-    data_url = f'data:image/png;base64,{base64img}'
-
-    # Constructing the HTML image tag
-    image = f'<img src="{data_url}">'
+    # png_decoded = base64.b64decode(png_encoded)
 
     res = cur.execute("SELECT * FROM palettes;")
 
-    return render_template('block-palettes.html', palettes=image)
+    return render_template('block-palettes.html', png_decoded=encoded_b2)
 
 @app.route("/upload-block-palette", methods=["POST"])
 def upload_block_palette():
@@ -178,6 +171,10 @@ def upload_block_palette():
 
     res = cur.execute("SELECT * FROM palettes;")
     return render_template('block-palettes.html', palettes=res)
+
+@app.route("/upload-build")
+def upload_build():
+    pass
 
 @app.route("/mindle")
 def mindle():
