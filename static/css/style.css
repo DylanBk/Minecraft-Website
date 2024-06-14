@@ -45,7 +45,7 @@ hr {
 }
 
 p {
-    font-size: 14px;
+    font-size: 14px !important;
 }
 
 body {
@@ -136,6 +136,9 @@ body {
         display: flex;
         flex-direction: row;
         padding: 10px;
+    }
+    .container p {
+        font-size: 14px;
     }
 
     .container-left {
@@ -688,6 +691,9 @@ body {
         width: 70%;
         padding: 1rem;
         border-right: solid 1px var(--caveSecondary);
+    }
+    .container-left p {
+        padding: 1rem;
     }
 
     .container-right {
