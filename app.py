@@ -8,31 +8,29 @@ app = Flask(__name__)
 
 # -- SQLITE3 VARIABLES --
 
-con = sqlite3.connect("data/test.db")
+con = sqlite3.connect("data/user-data.db")
 cur = con.cursor()
 
 cur.execute("CREATE TABLE if not exists userData (email TEXT UNIQUE, username TEXT UNIQUE, password TEXT);")
 cur.execute("CREATE TABLE if not exists palettes (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, image BLOB);")
 
-cur.execute("CREATE TABLE if not exists testdb (email TEXT, username TEXT, password TEXT);")
-
 
 #   --- SQLITE3 SUBROUTINES ---
 
 def upload_data(email, username, password):
-    con = sqlite3.connect('data/test.db')
+    con = sqlite3.connect('data/user-data.db')
     cur = con.cursor()
 
     con.execute("BEGIN TRANSACTION;") # allows for a db rollback incase of an error
 
     try:
-        email_dupe_check = cur.execute(f"SELECT * FROM testdb WHERE email = ?;", (email,)).fetchall()
-        username_dupe_check = cur.execute(f"SELECT * FROM testdb WHERE username = ?;", (username,)).fetchall()
+        email_dupe_check = cur.execute(f"SELECT * FROM userData WHERE email = ?;", (email,)).fetchall()
+        username_dupe_check = cur.execute(f"SELECT * FROM userData WHERE username = ?;", (username,)).fetchall()
 
         if len(email_dupe_check) == 0:
             print("no duplicates")
             if len(username_dupe_check) == 0:
-                cur.execute(f"INSERT INTO testdb (email, username, password) VALUES (?, ?, ?);", (email, username, password)) # passing variables after (?, ?, ?) reduces risk of SQL injection
+                cur.execute(f"INSERT INTO userData (email, username, password) VALUES (?, ?, ?);", (email, username, password)) # passing variables after (?, ?, ?) reduces risk of SQL injection
                 con.commit()
             else:
                 print("username taken")
@@ -46,12 +44,12 @@ def check_data(email, password):
     con = sqlite3.connect('data/test.db')
     cur = con.cursor()
 
-    res = cur.execute(f"SELECT * FROM testdb WHERE email = ?;", (email)).fetchall()
+    res = cur.execute(f"SELECT * FROM userData WHERE email = ?;", (email,)).fetchall()
 
     if len(res) == 0:
         pass
     else:
-        res = cur.execute(f"SELECT password FROM testdb WHERE email = ?;", (email,)).fetchall()
+        res = cur.execute(f"SELECT password FROM userData WHERE email = ?;", (email,)).fetchall()
 
         if res == password:
             pass
@@ -63,7 +61,7 @@ def remove_data(email, username, password):
     cur.execute("BEGIN TRANSACTION;")
 
     try:
-        cur.execute(f"DELETE FROM testdb WHERE email = ?;", (email,))
+        cur.execute(f"DELETE FROM userData WHERE email = ?;", (email,))
         con.commit()
     except Exception as err:
         con.rollback()
@@ -126,23 +124,24 @@ def wiki():
     return render_template('wiki.html')
 
 @app.route("/block-palettes")
-def block_palettes():
-    con = sqlite3.connect('data/block-palettes.db')
-    cur = con.cursor()
+def block_palettes(): # code not working
+    # con = sqlite3.connect('data/block-palettes.db')
+    # cur = con.cursor()
 
-    # !! CONVERT IMAGE BINARY DATA TO IMAGE !!
-    with open("static/images/account.png", "rb") as f:
-        png_encoded = base64.b64encode(f.read())
-    # print(png_encoded)
-    encoded_b2 = "".join([format(n, '08b') for n in png_encoded])
+    # # !! CONVERT IMAGE BINARY DATA TO IMAGE !!
+    # with open("static/images/account.png", "rb") as f:
+    #     png_encoded = base64.b64encode(f.read())
+    # # print(png_encoded)
+    # encoded_b2 = "".join([format(n, '08b') for n in png_encoded])
 
-    print(encoded_b2)
+    # print(encoded_b2)
 
-    # png_decoded = base64.b64decode(png_encoded)
+    # # png_decoded = base64.b64decode(png_encoded)
 
-    res = cur.execute("SELECT * FROM palettes;")
+    # res = cur.execute("SELECT * FROM palettes;")
 
-    return render_template('block-palettes.html', png_decoded=encoded_b2)
+    # return render_template('block-palettes.html', png_decoded=encoded_b2)
+    return render_template('block-palettes.html')
 
 @app.route("/upload-block-palette", methods=["POST"])
 def upload_block_palette():
